@@ -1,5 +1,7 @@
 config.gem 'rdiscount'
 
 ActionController::Dispatcher.to_prepare :luster_rdiscount do
-  PageBlock.add_markup_engine_type LusterRdiscount
+  if PageBlock.respond_to?(:add_markup_behavior)
+    PageBlock.add_markup_behavior LusterRdiscount
+  end
 end
