@@ -1,4 +1,4 @@
-module LusterRdiscount
+module FinethreadRdiscount
   def to_output_as_rdiscount page=self.page
     vanilla_output = to_output_without_rdiscount(page)
     RDiscount.new(vanilla_output).to_html
